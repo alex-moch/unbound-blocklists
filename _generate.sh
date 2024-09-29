@@ -73,6 +73,6 @@ process_url_list gambling[@] "gambling.conf"
 process_url_list malware[@] "malware.conf"
 
 # Check if config is invalid, then exit.
-if ! unbound-checkconf ./_unbound.conf; then
+if ! unbound-checkconf ./_unbound.conf 2> >(grep -v 'warning: duplicate local-zone'); then
     exit 1
 fi
