@@ -52,7 +52,8 @@ process_url_list() {
     done
 
     # Sort, remove duplicates in one step using sort -u, then format for unbound with always_null.
-    sort -u "$temp_file" | awk '{print "local-zone: \""$1"\" always_null"}' > "$output_file"
+    echo "server:" > "$output_file"
+    sort -u "$temp_file" | awk '{print "local-zone: \""$1"\" always_null"}' >> "$output_file"
 
     # Clean up.
     rm "$temp_file"
