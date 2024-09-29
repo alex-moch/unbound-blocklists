@@ -3,6 +3,12 @@
 # Change to the directory where the script is located
 cd "$(dirname "$(realpath "$0")")"
 
+# Ads.
+ads=(
+    "https://raw.githubusercontent.com/lassekongo83/Frellwits-filter-lists/master/Frellwits-Swedish-Hosts-File.txt"
+    "https://v.firebog.net/hosts/AdguardDNS.txt"
+)
+
 # Trackers.
 trackers=(
     "https://v.firebog.net/hosts/Easyprivacy.txt"
@@ -60,6 +66,7 @@ process_url_list() {
 }
 
 # Process each category and generate the corresponding .conf file.
+process_url_list ads[@] "ads.conf"
 process_url_list trackers[@] "trackers.conf"
 process_url_list social[@] "social.conf"
 process_url_list gambling[@] "gambling.conf"
