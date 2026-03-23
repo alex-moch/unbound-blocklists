@@ -26,7 +26,8 @@ trackers=(
 
 # Social.
 social=(
-    "https://raw.githubusercontent.com/mullvad/dns-blocklists/refs/heads/main/files/social"
+    #"https://raw.githubusercontent.com/mullvad/dns-blocklists/refs/heads/main/files/social"
+    "https://raw.githubusercontent.com/mullvad/dns-blocklists/refs/heads/main/scripts/generate_social_blocklists_urls"
 )
 
 # Gambling.
